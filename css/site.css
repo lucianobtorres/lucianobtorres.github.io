@@ -1,0 +1,109 @@
+body
+{
+    background-color: #EDEDED;    
+    font-size: 2ch;
+    line-height: 1em;
+    color: #B0B0B0;
+    font-family: "Crimson Text", serif;
+    position: relative;
+}
+div
+{
+    position: relative;
+    display: block;
+}
+h2:before
+{
+    content: "<";
+}
+h2:after
+{
+    content: ">";
+}
+h2
+{
+    margin: .1em;
+    font-size: 3ch;
+    font-family: "Open Sans Condensed", sans-serif;    
+    margin-bottom: 1em;
+    margin-left: 0;
+}
+h3
+{
+    font-size: 2ch;
+    font-weight: bold;
+    font-family: "Open Sans", sans-serif;
+    padding-right: 1em;
+}
+h1, 
+h2, 
+h4
+{
+    font-family: "Open Sans Condensed", sans-serif;
+}
+main
+{
+    font-family: "Crimson Text", serif;
+    margin-top: 5em;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 50em;
+    clear: both;
+}
+main h1
+{
+    font-size: 4ch;
+    color: #F3F4C1;
+    font-family: "Open Sans Condensed", sans-serif;
+    font-weight: bold;
+    padding-top: .5em;
+    padding-bottom: 1em;
+    padding-right: 1em;
+    text-transform: uppercase;
+    text-align: center;
+    margin: -.5em;
+    line-height: .8em;    
+}
+main a
+{
+    color: #851944;
+}
+main p
+{
+    text-indent: 2ch;
+    text-align: justify;
+    line-height: 1.3em;
+    margin: .3em 0;
+}
+main ul
+{
+    list-style-type: disc;
+}
+main .container
+{
+    margin-bottom: 16em;
+}
+nav a
+{
+    color: inherit;
+}
+li
+{
+    margin: 10px;
+}
+footer
+{    
+    opacity: .9;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    clear: both;
+    padding: 1.5em;
+}
+footer li
+{
+    display:inline-block;  
+    margin:0 10em 1em 0;       
+    box-sizing: border-box;    
+}

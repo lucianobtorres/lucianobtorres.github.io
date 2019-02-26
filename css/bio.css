@@ -1,0 +1,102 @@
+.minha-foto
+{    
+    height: 8em;
+    padding: .15em;
+    background: #EDEDED;
+    box-sizing: border-box;
+    border: .1em solid #A1A1A1; 
+    position: relative;
+    float: left;
+    top: -2.5em;
+    left: -2.5em;
+}
+.container
+{    
+    margin: 1em 0;
+    position: relative;
+}
+.apresentacao.rounded-border
+{
+    background-color: #B0B0B0;
+    color: #FFF;
+}
+.apresentacao h3
+{
+    text-align: center;
+}
+.rounded-border
+{
+    background-color: #FFF;
+    box-shadow: 0 0 0 0,0 .2em .4em rgba(34,34,34,0.1);
+    -webkit-border-radius: .2em;
+    border-radius: .2em;
+}
+.card
+{
+    margin: 1.5em;
+    padding: 1.5em;
+}
+.experiencia, 
+.periodo, 
+.titulo-experiencia, 
+.descricao-experiencia 
+{
+    display: inline-block;    
+    box-sizing: border-box;
+    position: relative;
+    top: 0;
+    right: 0;    
+}
+.periodo, 
+.titulo-experiencia, 
+.descricao-experiencia
+{    
+    float: left;
+}
+.titulo-experiencia
+{
+    width: 25%;
+}
+.descricao-experiencia
+{
+    width: 75%;
+    min-height: 1em;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+}
+.empresa, 
+.cargo, 
+.nome-instituicao, 
+.formacao
+{    
+    font-size: 2ch;
+    font-weight: bold;
+}
+.periodo 
+{
+    font-size: 1.5ch;
+}
+.icones-sociais a, icones-sociais p
+{
+    width: 2em;
+    height: 2em;
+    display: inline-block;
+    text-indent: 3em;
+}
+.github
+{
+    background-image: url(../img/github.png);
+    background-repeat: no-repeat;
+}
+.twitter
+{
+    background-image: url(../img/twitter.png);    
+    background-repeat: no-repeat;
+
+}
+.linkedin
+{
+    background-image: url(../img/linkedin.png);
+    padding: 1px 5px;
+    background-repeat: no-repeat;
+}
