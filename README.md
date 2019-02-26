@@ -1,1 +1,1 @@
-# Página pessoal contendo meu cúrriculo
+# Página pessoal contendo meu currículo
