@@ -2,7 +2,7 @@ body
 { 
     font-size: 2ch;
     line-height: 1em;
-    font-family: "Crimson Text", serif;
+    font-family: 'Open Sans', sans-serif;
     position: relative;
     background: #2D4B81;
     background: -moz-linear-gradient(60deg, #2D4B81 0%, #5489BB 100%);
@@ -22,35 +22,16 @@ h2
     margin-left: 0;
     padding: .1em;
     overflow: hidden;
-    font-size: 3ch;
-    font-family: "Open Sans Condensed", sans-serif;
-}
-h2:after
-{
-    content: "";
-    display: inline-block;
-    height: 0.23em;
-    vertical-align: bottom;
-    width: 100%;
-    margin-right: -100%;
-    margin-left: 1ch;
+    font-size: 2ch;
 }
 h3
 {
-    font-size: 2ch;
+    font-size: 1.5ch;
     font-weight: bold;
-    font-family: "Open Sans", sans-serif;
     padding-right: 1em;
-}
-h1, 
-h2, 
-h4
-{
-    font-family: "Open Sans Condensed", sans-serif;
 }
 main
 {
-    font-family: "Crimson Text", serif;
     padding-top: 5em;
     padding-bottom: 5em;
     max-width: 50em;
@@ -62,18 +43,17 @@ main
 }
 main h1
 {
-    font-size: 4ch;
-    font-family: "Open Sans Condensed", sans-serif;
+    font-size: 3ch;
     text-transform: uppercase;
     text-align: center;
-    line-height: .8em;    
+    line-height: 1.8em;
 }
 main p
 {
-    text-indent: 2ch;
     text-align: justify;
     line-height: 1.3em;
     margin: .3em 0;
+    font-size: 1.7ch;
 }
 nav a
 {
@@ -83,9 +63,20 @@ li {
     list-style-type: none;
     margin: .5em;
     box-sizing: border-box;
-    margin-left: -1em;
+    margin-left: -.5em;
+    text-align: justify;
 }
-span {
-    margin-left: -1em;
+span
+{
+    margin-left: -.5em;
     margin-top: -.2em;
+}
+img 
+{
+    height: 10em;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
 }
