@@ -1,69 +1,137 @@
 .minha-foto
 {    
-    height: 8em;
-    padding: .15em;
-    background: #EDEDED;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2em;
+    width: 10em;
+    height: 10em;
+    overflow: hidden;
+    border-radius: 50%;
+    background: #eaeced;
+    border: .2em  solid #eaeced;
+    filter: grayscale(100%) ;
     box-sizing: border-box;
-    border: .1em solid #2D2E30; 
-    position: relative;
-    float: left;
-    top: -2.5em;
-    left: -2.5em;
+}
+.minha-foto img {
+    width: auto;
+    height: 100%;
+    margin-left: -20px;
 }
 .container
 {    
-    margin: 1em 0;
     position: relative;
+    max-width: 50em;
+    box-shadow: 0 0 0 0,0 .4em .4em rgba(34, 34, 34, 0.5);
+    -webkit-border-radius: .4em;
+    border-radius: .4em;
 }
-.apresentacao.rounded-border
+.apresentacao
+{   
+    position: absolute;
+    display: inline-block;
+    width: 40%;
+    max-width: 40%;
+    min-width: 20%;
+    height: 100%;
+    vertical-align: top;
+
+    margin-top: -5em;
+    margin-bottom: -5em;
+    box-sizing: border-box;
+    overflow: hidden;
+    color: #eaeced;
+    background-color: #1d2e3d;
+}
+.apresentacao .item h2:after
 {
-    background-color: #2D2E30;
-    color: #FFF;
+    content: "";
+    display: inline-block;
+    height: 0.23em;
+    vertical-align: bottom;
+    width: 100%;
+    margin-right: -100%;
+    margin-left: 1ch;
+    border-top: .1em solid #eaeced;
+}
+.apresentacao h2
+{
+    font-weight: bold;
 }
 .apresentacao h3
 {
     text-align: center;
 }
-.rounded-border
-{
-    background-color: #FFF;
-    box-shadow: 0 0 0 0,0 .2em .4em rgba(34,34,34,0.1);
-    -webkit-border-radius: .2em;
-    border-radius: .2em;
+.curriculum
+{    
+    margin: 1em 0;
+    margin-left: 40%;
+    display: inline-block;
+    width: 60%;
+    max-width: 60%;
+    height: 100%;
+    vertical-align: top;
+    
+    margin-top: -5em;
+    margin-bottom: -5em;    
+    box-sizing: border-box;
+    overflow: hidden;
+    color: #1d2e3d;
+    background-color: #eaeced;
 }
-.card
+.curriculum .item h2
 {
-    margin: 1.5em;
-    padding: 1.5em;
+    font-size: 3ch;
+    background-color: #1d2e3d;
+    color: #eaeced;
+    display: inline-block;
+    padding-top: .3em;
+    padding-bottom: .3em;
+    padding-left: 1em;
+    padding-right: 1em;
+    box-sizing: content-box;
+    border: .1em solid #1d2e3d;    
+    margin-left: 1em;
+}
+.item
+{   
+    font-size: 1.5ch;
+    margin: 1em;
+    padding: 1em;
+}
+.experiencia,
+.instituicao
+{    
+    border-left: .2em solid #1d2e3d;    
+}
+.periodo
+{
+    font-weight: bold;
 }
 .experiencia, 
 .periodo, 
-.titulo-experiencia, 
 .descricao-experiencia 
 {
     display: inline-block;    
     box-sizing: border-box;
     position: relative;
     top: 0;
-    right: 0;    
-}
-.periodo, 
-.titulo-experiencia, 
-.descricao-experiencia
-{    
-    float: left;
+    right: 0;
 }
 .titulo-experiencia
 {
-    width: 25%;
+    width: 30%;
+    vertical-align: top;
+    position: absolute;
 }
 .descricao-experiencia
 {
-    width: 75%;
+    margin-left: 30%;
+    vertical-align: top;
     min-height: 1em;
-    padding-left: 1.5em;
-    padding-right: 1.5em;
+    padding-left: 1em;
 }
+
 .empresa, 
 .cargo, 
 .nome-instituicao, 
@@ -74,29 +142,15 @@
 }
 .periodo 
 {
-    font-size: 1.5ch;
+    font-size: 1.7ch;
 }
 .icones-sociais a, icones-sociais p
 {
-    width: 2em;
     height: 2em;
     display: inline-block;
     text-indent: 3em;
 }
-.github
-{
-    background-image: url(../img/github.png);
-    background-repeat: no-repeat;
-}
-.twitter
-{
-    background-image: url(../img/twitter.png);    
-    background-repeat: no-repeat;
-
-}
-.linkedin
-{
-    background-image: url(../img/linkedin.png);
-    padding: 1px 5px;
-    background-repeat: no-repeat;
-}
+ .fa-li
+ {
+    font-size: 28px;
+ }
