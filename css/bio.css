@@ -12,29 +12,60 @@
 }
 .container
 {    
-    margin: 1em 0;
     position: relative;
+    max-width: 50em;
+    box-shadow: 0 0 0 0,0 .4em .4em rgba(34, 34, 34, 0.5);
+    -webkit-border-radius: .4em;
+    border-radius: .4em;
 }
-.apresentacao.rounded-border
+.apresentacao
+{    
+    position: absolute;
+    display: inline-block;
+    width: 40%;
+    max-width: 40%;
+    height: 100%;
+    vertical-align: top;
+
+    margin-top: -5em;
+    margin-bottom: -5em;
+    box-sizing: border-box;
+    overflow: hidden;
+    color: #eaeced;
+    background-color: #1d2e3d;
+}
+.apresentacao .item h2:after
 {
-    background-color: #B0B0B0;
-    color: #FFF;
+    border-top: .1em solid #eaeced;    
 }
 .apresentacao h3
 {
     text-align: center;
 }
-.rounded-border
-{
-    background-color: #FFF;
-    box-shadow: 0 0 0 0,0 .2em .4em rgba(34,34,34,0.1);
-    -webkit-border-radius: .2em;
-    border-radius: .2em;
+.curriculum
+{    
+    margin: 1em 0;
+    margin-left: 40%;
+    display: inline-block;
+    width: 60%;
+    max-width: 60%;
+    height: 100%;
+    vertical-align: top;
+    
+    margin-top: -5em;
+    margin-bottom: -5em;    
+    box-sizing: border-box;
+    overflow: hidden;
+    color: #1d2e3d;
+    background-color: #eaeced;
 }
-.card
+.curriculum .item h2:after
 {
-    margin: 1.5em;
-    padding: 1.5em;
+    border-top: .1em solid #1d2e3d;    
+}
+.item
+{   margin: 1em;
+    padding: 1em;
 }
 .experiencia, 
 .periodo, 
@@ -83,20 +114,7 @@
     display: inline-block;
     text-indent: 3em;
 }
-.github
-{
-    background-image: url(../img/github.png);
-    background-repeat: no-repeat;
-}
-.twitter
-{
-    background-image: url(../img/twitter.png);    
-    background-repeat: no-repeat;
-
-}
-.linkedin
-{
-    background-image: url(../img/linkedin.png);
-    padding: 1px 5px;
-    background-repeat: no-repeat;
-}
+ .fa-li
+ {
+    font-size: 28px;
+ }
