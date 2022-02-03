@@ -63,7 +63,7 @@ li {
     list-style-type: none;
     margin: .5em;
     box-sizing: border-box;
-    margin-left: -.5em;
+    margin-left: 0em;
     text-align: justify;
 }
 span

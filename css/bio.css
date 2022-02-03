@@ -64,7 +64,6 @@
 }
 .curriculum
 {    
-    margin: 1em 0;
     margin-left: 40%;
     display: inline-block;
     width: 60%;
@@ -73,7 +72,7 @@
     vertical-align: top;
     
     margin-top: -5em;
-    margin-bottom: -5em;    
+    margin-bottom: -5em;
     box-sizing: border-box;
     overflow: hidden;
     color: #1d2e3d;
@@ -102,7 +101,7 @@
 .experiencia,
 .instituicao
 {    
-    border-left: .2em solid #1d2e3d;    
+    border-left: .2em solid #1d2e3d;
 }
 .periodo
 {
@@ -112,7 +111,6 @@
 .periodo, 
 .descricao-experiencia 
 {
-    display: inline-block;    
     box-sizing: border-box;
     position: relative;
     top: 0;
@@ -120,7 +118,7 @@
 }
 .titulo-experiencia
 {
-    width: 30%;
+    width: 23%;
     vertical-align: top;
     position: absolute;
 }
