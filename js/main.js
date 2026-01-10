@@ -1,0 +1,376 @@
+/**
+ * Portfolio Landing Page - Main JavaScript
+ * Handles scroll animations, smooth scrolling, and interactive elements
+ */
+
+(function() {
+    'use strict';
+
+    // ===================================
+    // SMOOTH SCROLLING
+    // ===================================
+    function initSmoothScrolling() {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                
+                // Skip if it's just "#"
+                if (href === '#') return;
+                
+                e.preventDefault();
+                
+                const target = document.querySelector(href);
+                if (target) {
+                    const offsetTop = target.offsetTop;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    }
+
+    // ===================================
+    // SCROLL REVEAL ANIMATIONS
+    // ===================================
+    function initScrollReveal() {
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        if (revealElements.length === 0) return;
+        
+        // Intersection Observer options
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+        
+        // Callback when element becomes visible
+        const observerCallback = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    // Optional: stop observing after reveal
+                    // observer.unobserve(entry.target);
+                }
+            });
+        };
+        
+        // Create observer
+        const observer = new IntersectionObserver(observerCallback, observerOptions);
+        
+        // Observe all reveal elements
+        revealElements.forEach(element => {
+            observer.observe(element);
+        });
+    }
+
+    // ===================================
+    // SCROLL INDICATOR
+    // ===================================
+    function initScrollIndicator() {
+        const scrollIndicator = document.querySelector('.scroll-indicator');
+        
+        if (!scrollIndicator) return;
+        
+        // Hide scroll indicator after scrolling past hero
+        let ticking = false;
+        
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    const scrollY = window.scrollY;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (scrollY > windowHeight * 0.3) {
+                        scrollIndicator.style.opacity = '0';
+                        scrollIndicator.style.pointerEvents = 'none';
+                    } else {
+                        scrollIndicator.style.opacity = '0.8';
+                        scrollIndicator.style.pointerEvents = 'auto';
+                    }
+                    
+                    ticking = false;
+                });
+                
+                ticking = true;
+            }
+        });
+    }
+
+    // ===================================
+    // NAVBAR SCROLL EFFECT (if needed in future)
+    // ===================================
+    function initNavbarScroll() {
+        const navbar = document.querySelector('.navbar');
+        
+        if (!navbar) return;
+        
+        let lastScroll = 0;
+        
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.scrollY;
+            
+            if (currentScroll > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+            
+            lastScroll = currentScroll;
+        });
+    }
+
+    // ===================================
+    // TECH BADGE HOVER EFFECTS
+    // ===================================
+    function initTechBadges() {
+        const techBadges = document.querySelectorAll('.tech-badge, .badge');
+        
+        techBadges.forEach(badge => {
+            // Add ripple effect on click (optional enhancement)
+            badge.addEventListener('click', function(e) {
+                const ripple = document.createElement('span');
+                ripple.classList.add('ripple');
+                
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+                
+                ripple.style.width = ripple.style.height = size + 'px';
+                ripple.style.left = x + 'px';
+                ripple.style.top = y + 'px';
+                
+                this.appendChild(ripple);
+                
+                setTimeout(() => ripple.remove(), 600);
+            });
+        });
+    }
+
+    // ===================================
+    // HERO PARALLAX EFFECT (subtle)
+    // ===================================
+    function initParallax() {
+        const hero = document.querySelector('#hero');
+        
+        if (!hero) return;
+        
+        let ticking = false;
+        
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    const scrolled = window.scrollY;
+                    const heroContent = hero.querySelector('.hero-content');
+                    
+                    if (heroContent && scrolled < window.innerHeight) {
+                        // Subtle parallax effect
+                        heroContent.style.transform = `translateY(${scrolled * 0.3}px)`;
+                        heroContent.style.opacity = 1 - (scrolled / window.innerHeight) * 0.5;
+                    }
+                    
+                    ticking = false;
+                });
+                
+                ticking = true;
+            }
+        });
+    }
+
+    // ===================================
+    // CARD TILT EFFECT (3D hover)
+    // ===================================
+    function initCardTilt() {
+        const cards = document.querySelectorAll('.card, .project-card');
+        
+        cards.forEach(card => {
+            card.addEventListener('mousemove', function(e) {
+                const rect = this.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                const rotateX = (y - centerY) / 20;
+                const rotateY = (centerX - x) / 20;
+                
+                this.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = '';
+            });
+        });
+    }
+
+    // ===================================
+    // TYPING EFFECT (optional for hero)
+    // ===================================
+    function initTypingEffect() {
+        const heroTitle = document.querySelector('.hero-title');
+        
+        if (!heroTitle || heroTitle.dataset.typed) return;
+        
+        const text = heroTitle.textContent;
+        heroTitle.textContent = '';
+        heroTitle.dataset.typed = 'true';
+        
+        let i = 0;
+        
+        function typeWriter() {
+            if (i < text.length) {
+                heroTitle.textContent += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, 50);
+            }
+        }
+        
+        // Start typing after a short delay
+        setTimeout(typeWriter, 500);
+    }
+
+    // ===================================
+    // PERFORMANCE TRACKING
+    // ===================================
+    function logPerformance() {
+        if (window.performance && window.performance.timing) {
+            window.addEventListener('load', () => {
+                const perfData = window.performance.timing;
+                const loadTime = perfData.loadEventEnd - perfData.navigationStart;
+                console.log(`🚀 Page loaded in ${loadTime}ms`);
+            });
+        }
+    }
+
+    // ===================================
+    // INITIALIZE ALL
+    // ===================================
+    function init() {
+        console.log('🎨 Initializing portfolio...');
+        
+        // Core features
+        initSmoothScrolling();
+        initScrollReveal();
+        initScrollIndicator();
+        
+        // Enhanced features
+        initParallax();
+        initTechBadges();
+        
+        // Optional: uncomment if you want these effects
+        // initCardTilt();
+        // initTypingEffect();
+        
+        // Animate skill bars
+        initSkillBars();
+        
+        // Enhanced parallax cubes
+        initBokehParallax();
+        
+        // Back to Top functionality
+        initBackToTop();
+        
+        // Performance tracking (development only)
+        if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+            logPerformance();
+        }
+        
+        console.log('✅ Portfolio initialized successfully!');
+    }
+    
+    // ===================================
+    // BACK TO TOP BUTTON
+    // ===================================
+    function initBackToTop() {
+        const backToTopBtn = document.getElementById('backToTop');
+        
+        if (!backToTopBtn) return;
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        });
+        
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+
+    // ===================================
+    // SKILL BARS ANIMATION
+    // ===================================
+    function initSkillBars() {
+        const skillBars = document.querySelectorAll('.skill-bar-item');
+        
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.3
+        };
+        
+        const observerCallback = (entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        };
+        
+        const observer = new IntersectionObserver(observerCallback, observerOptions);
+        
+        skillBars.forEach(bar => {
+            observer.observe(bar);
+        });
+    }
+    
+    // ===================================
+    // ENHANCED BOKEH PARALLAX
+    // ===================================
+    function initBokehParallax() {
+        const cubes = document.querySelectorAll('.bokeh-cube');
+        
+        if (cubes.length === 0) return;
+        
+        let ticking = false;
+        
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    const scrolled = window.scrollY;
+                    
+                    cubes.forEach((cube, index) => {
+                        // Different scroll speeds for each cube
+                        const speed = 0.1 + (index * 0.05);
+                        const yOffset = scrolled * speed;
+                        
+                        cube.style.transform = `translateY(${yOffset}px)`;
+                    });
+                    
+                    ticking = false;
+                });
+                
+                ticking = true;
+            }
+        });
+    }
+
+    // ===================================
+    // EXECUTE ON DOM READY
+    // ===================================
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+
+})();

@@ -1,135 +1,538 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Luciano Borges</title>
-        <meta charset="utf-8">
-        <link rel="icon" href="favicon.png">
-        <link rel="stylesheet" href="css/reset.css">
-        <link rel="stylesheet" href="css/bio.css">
-        <link rel="stylesheet" href="css/site.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.0/css/all.css"/>
-    </head>
-    <body>   
-        <main class="container">
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio de Luciano Borges - Engenheiro de Software Sênior especializado em Python, .NET, React, Docker e soluções com IA/ML. Desenvolvedor Full Stack com MBA em IA Generativa.">
+    <meta name="keywords" content="Luciano Borges, Desenvolvedor, Python, .NET, React, Angular, FastAPI, Docker, IA, Machine Learning">
+    <meta name="author" content="Luciano Borges">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Luciano Borges | Engenheiro de Software Sênior">
+    <meta property="og:description" content="Full Stack Developer & AI Enthusiast | Python, .NET, React, Docker">
+    <meta property="og:image" content="https://lucianobtorres.github.io/img/eu.JPG">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Luciano Borges | Engenheiro de Software Sênior">
+    <meta name="twitter:description" content="Full Stack Developer & AI Enthusiast">
+    
+    <title>Luciano Borges | Engenheiro de Software Sênior | Python, .NET, React, AI/ML</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.png">
+    
+    <!-- Fonts - Cyberpunk/Gamer Theme -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/cyberpunk.css">
+    <link rel="stylesheet" href="css/skills-chart.css">
+    
+    <!-- All styles moved to cyberpunk.css for better organization -->
+
+</head>
+<body>
+    <!-- Parallax Bokeh Cubes -->
+    <div class="parallax-container">
+        <div class="bokeh-cube"></div>
+        <div class="bokeh-cube"></div>
+        <div class="bokeh-cube"></div>
+        <div class="bokeh-cube"></div>
+    </div>
+    
+    <!-- Hero Section - Cyberpunk -->
+    <section id="hero">
+        <!-- Floating particles background -->
+        <div class="particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+        
+        <div class="hero-content fade-in-up">
+            <h1 class="hero-name glitch-text">LUCIANO BORGES</h1>
+            <p class="hero-title neon-glow-text">Engenheiro de Software Sênior</p>
             
-            <div class="apresentacao">
-                <div class="item">
-                    <div class="minha-foto">
+            <div class="hero-tech">
+                <span class="tech-float">Python</span>
+                <span class="tech-float">.NET</span>
+                <span class="tech-float">React</span>
+                <span class="tech-float">Angular</span>
+                <span class="tech-float">FastAPI</span>
+                <span class="tech-float">Docker</span>
+                <span class="tech-float">PostgreSQL</span>
+                <span class="tech-float">AI/ML</span>
+            </div>
+            
+            <div class="hero-cta">
+                <a href="#projects" class="btn btn-primary btn-lg">
+                    <i class="fas fa-rocket"></i> Ver Projetos
+                </a>
+                <a href="https://wa.me/5521993060750" target="_blank" class="btn btn-ghost btn-lg">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+            </div>
+        </div>
+        
+        <a href="#about" class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding">
+        <div class="about-bg-wrapper"></div>
+        <div class="container">
+            <div class="about-content reveal">
+                <div class="about-photo-wrapper">
+                    <div class="about-photo">
                         <img src="img/eu.JPG" alt="Foto de Luciano Borges">
                     </div>
-                    <h1>luciano Borges</h1>
-                    <h3>Bacharel em Sistemas de Informação e Técnico em Processamento de Dados </h3>
-                </div> 
-
-                <div class="item">
-                    <h2>Sobre mim</h2> 
-                    <p> Sou apaixonado por desenvolvimento de sistemas, lógica, linguagens de programação e assuntos variados para se trabalhar. Tudo isso sempre me motivou bastante.</p>
-                    <p>Tenho sólidos conhecimentos em demanda de usuários, negociação com o cliente, desenvolvimento de softwares desktop, analise de sistemas, levantamento de requisitos,  Continuios Delivery, SCRUM e outras metodologias de desenvolvimento.</p>
                 </div>
+                
+                <div>
+                    <h2 class="mb-6 shine">Sobre mim</h2>
                     
-                <div class="item">
-                    <h2>Como trabalho</h2>
-                    <p>Priorizo o atendimento ao cliente e busco estar sempre melhorando nas áreas da minha vida profissional estudando, participando bastante dos debates propostos, ajudando no que eu puder aos profissionais parceiros e colegas e acredito que tudo pode mudar e melhorar. Tento sempre fazer o meu melhor e melhorar minha codificação, estudando design partners, DDD, TDD e tecnologias emergentes.</p>
+                    <p class="text-lg mb-6 text-gray-700">
+                        Sou apaixonado por desenvolvimento de sistemas, arquitetura de software e tecnologias emergentes. Com mais de 14 anos de experiência na Tecgraf/PUC-RJ, evolui de desenvolvimento desktop para soluções modernas full-stack e integração com IA.
+                    </p>
+                    
+                    <p class="text-lg mb-6 text-gray-700">
+                        Atualmente cursando <strong>MBA em IA Generativa e LLMs na PUC-Rio</strong> (conclusão em junho/2026), estou focado em combinar desenvolvimento de software robusto com as capacidades transformadoras da Inteligência Artificial.
+                    </p>
+                    
+                    <p class="text-lg mb-8 text-gray-700">
+                        Domino Clean Architecture, DDD, TDD, CI/CD e metodologias ágeis (SCRUM). Busco sempre estar aprendendo e contribuindo com a comunidade através de projetos open source e compartilhamento de conhecimento.
+                    </p>
+                    
+                    <!-- Skills -->
+                    <div>
+                        <h3 class="mb-4">Tech Stack</h3>
+                        
+                        <div class="skill-category">
+                            <div class="skill-category-title">
+                                <i class="fas fa-server skill-category-icon"></i>
+                                Backend
+                            </div>
+                            <div class="skill-tags">
+                                <span class="tech-badge">C#/.NET</span>
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">FastAPI</span>
+                                <span class="tech-badge">Node.js</span>
+                                <span class="tech-badge">REST APIs</span>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <div class="skill-category-title">
+                                <i class="fas fa-palette skill-category-icon"></i>
+                                Frontend
+                            </div>
+                            <div class="skill-tags">
+                                <span class="tech-badge">Angular</span>
+                                <span class="tech-badge">TypeScript</span>
+                                <span class="tech-badge">HTML/CSS</span>
+                                <span class="tech-badge">React</span>
+                                <span class="tech-badge">PWA</span>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <div class="skill-category-title">
+                                <i class="fas fa-database skill-category-icon"></i>
+                                Database & Cache
+                            </div>
+                            <div class="skill-tags">
+                                <span class="tech-badge">Oracle</span>
+                                <span class="tech-badge">PostgreSQL</span>
+                                <span class="tech-badge">Redis</span>
+                                <span class="tech-badge">SQL Server</span>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <div class="skill-category-title">
+                                <i class="fas fa-cogs skill-category-icon"></i>
+                                DevOps & Tools
+                            </div>
+                            <div class="skill-tags">
+                                <span class="tech-badge">Docker</span>
+                                <span class="tech-badge">GitHub Actions</span>
+                                <span class="tech-badge">CI/CD</span>
+                                <span class="tech-badge">WSL</span>
+                                <span class="tech-badge">Git</span>
+                                <span class="tech-badge">GitLba</span>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <div class="skill-category-title">
+                                <i class="fas fa-brain skill-category-icon"></i>
+                                AI & ML
+                            </div>
+                            <div class="skill-tags">
+                                <span class="tech-badge">LLM Integration</span>
+                                <span class="tech-badge">Gemini API</span>
+                                <span class="tech-badge">Groq</span>
+                                <span class="tech-badge">RAG</span>
+                                <span class="tech-badge">Prompt Engineering</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Skills Chart -->
+                        <div class="skills-chart reveal">
+                            <h3><i class="fas fa-chart-bar"></i> Proficiência nas Principais Tecnologias</h3>
+                            
+                            <div class="skill-bar-item">
+                                <div class="skill-bar-label">
+                                    <span>Python</span>
+                                    <span>95%</span>
+                                </div>
+                                <div class="skill-bar-bg">
+                                    <div class="skill-bar-fill" data-level="expert" style="--skill-width: 95%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-bar-item">
+                                <div class="skill-bar-label">
+                                    <span>React / TypeScript</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="skill-bar-bg">
+                                    <div class="skill-bar-fill" data-level="expert" style="--skill-width: 90%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-bar-item">
+                                <div class="skill-bar-label">
+                                    <span>FastAPI / .NET</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="skill-bar-bg">
+                                    <div class="skill-bar-fill" data-level="expert" style="--skill-width: 90%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-bar-item">
+                                <div class="skill-bar-label">
+                                    <span>Docker / CI/CD</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="skill-bar-bg">
+                                    <div class="skill-bar-fill" data-level="advanced" style="--skill-width: 85%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-bar-item">
+                                <div class="skill-bar-label">
+                                    <span>PostgreSQL / Redis</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="skill-bar-bg">
+                                    <div class="skill-bar-fill" data-level="advanced" style="--skill-width: 85%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-bar-item">
+                                <div class="skill-bar-label">
+                                    <span>LLMs / AI Integration</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="skill-bar-bg">
+                                    <div class="skill-bar-fill" data-level="expert" style="--skill-width: 90%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <div class="item">
-                    <nav>
-                        <h2>Contato</h2>
-                        <ul class="icones-sociais">
-                            <li><a href="tel:+5521993060750"><span class="fa-li"><i class="fas fa-phone-square-alt"></i></span>+55 21 99306-0750</a></li>
-                            <li><a href="mailto:lucianobtorres@gmail.com"><span class="fa-li"><i class="fas fa-envelope-square"></i></span>lucianobtorres@gmail.com</a></li>
-                            <li><a href="https://github.com/lucianobtorres" target="_blank"><span class="fa-li"><i class="fab fa-github-square"></i></span>github.com/lucianobtorres</a></li>
-                            <li><a href="https://twitter.com/lucianobtorres" target="_blank"><span class="fa-li"><i class="fab fa-twitter-square"></i></span>twitter.com/lucianobtorres</a></li>
-                            <li><a href="https://www.linkedin.com/in/lucianobtorres/" target="_blank"><span class="fa-li"><i class="fab fa-linkedin"></i></span>linkedin.com/in/lucianobtorres</a></li>
-                        </ul>
-                    </nav>                     
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section-padding">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="section-title shine">Projetos em Destaque</h2>
+                <p class="section-subtitle">Soluções modernas que combinam desenvolvimento full-stack com inteligência artificial</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-2">
+                <!--  PoupeAI - Featured -->
+                <div class="project-card project-card-featured reveal reveal-delay-1">
+                    <div class="project-card-header">
+                        <h3 class="project-title">
+                            <i class="fas fa-shopping-cart"></i> PoupeAI
+                        </h3>
+                        <span class="badge badge-primary">Destaque</span>
+                    </div>
+                    <div class="project-card-body">
+                        <p class="project-description">
+                            Aplicação web colaborativa para gerenciamento de compras domésticas. Permite que casais organizem listas de mercado em tempo real, categorizam produtos e acompanhem gastos.
+                        </p>
+                        
+                        <div class="project-tech">
+                            <span class="badge badge-primary">React</span>
+                            <span class="badge badge-accent">TypeScript</span>
+                            <span class="badge badge-purple">Vite</span>
+                            <span class="badge">PWA</span>
+                        </div>
+                        
+                        <p class="text-sm mt-4">
+                            <strong>Status:</strong> ✅ Pronto e funcional | Em melhorias contínuas
+                        </p>
+                        
+                        <div style="display: flex; gap: 1rem; margin-top: 1rem; flex-wrap: wrap;">
+                            <a href="https://lucianobtorres.github.io/market/" target="_blank" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> Ver Demo
+                            </a>
+                            <a href="https://github.com/lucianobtorres/market" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i> Ver Código
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- BudgetIA -->
+                <div class="project-card reveal reveal-delay-2">
+                    <div class="project-card-header" style="background: var(--gradient-purple);">
+                        <h3 class="project-title">
+                            <i class="fas fa-robot"></i> BudgetIA
+                        </h3>
+                        <span class="badge" style="background: rgba(255,255,255,0.3);">Em Desenvolvimento</span>
+                    </div>
+                    <div class="project-card-body">
+                        <p class="project-description text-gray-700">
+                            Sistema inteligente de gestão financeira pessoal com insights gerados por IA. Oferece análises proativas, alertas personalizados e consultas em linguagem natural.
+                        </p>
+                        
+                        <div class="project-tech">
+                            <span class="badge badge-primary">Python</span>
+                            <span class="badge badge-accent">FastAPI</span>
+                            <span class="badge badge-purple">React</span>
+                            <span class="badge badge-pink">PostgreSQL</span>
+                            <span class="badge">Redis</span>
+                            <span class="badge">Docker</span>
+                            <span class="badge">LLMs</span>
+                        </div>
+                        
+                        <p class="text-sm text-gray-600 mt-4">
+                            <strong>Features:</strong> Alertas proativos • Memória de IA • Queries em NLP • PWA
+                        </p>
+                        
+                        <a href="https://github.com/lucianobtorres" target="_blank" class="project-link">
+                            Ver no GitHub <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
             
-            <div class="curriculum">
-                <div class="item">
-                    <h2>Experiência</h2>
-                    <p>Trabalhei em desenvolvimento de alguns sistemas do zero, participei da produção parcial de outros sistemas, levantamento de requisitos, analise de sistemas para produção de novas features e correção de BUGs. </p>
+            <div class="text-center mt-12 reveal reveal-delay-3">
+                <p class="text-lg text-gray-600 mb-4">
+                    Interessado em landing pages modernas e interativas como esta?
+                </p>
+                <a href="#contact" class="btn btn-primary btn-lg">
+                    <i class="fas fa-handshake"></i> Vamos trabalhar juntos
+                </a>
+            </div>
+        </div>
+    </section>
 
-                    <div class="experiencia item">
-                        <div class="titulo-experiencia">
-                            <div class="empresa">Tecgraf / PUC-Rj</div>
-                            <div class="periodo">desde 2012</div>
-                        </div>
-                        <div class="descricao-experiencia">
-                            <div class="cargo">Analista de sistemas</div>
-                            <div class="descricao">
-                                <ul>
-                                    <li>Desenvolvimento de sistemas Desktop com Windows Forms e WPF</li>
-                                    <li>Desenvolvimento em C# utilizando .NET</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="experiencia item">
-                        <div class="titulo-experiencia">
-                            <div class="empresa">Merck KGaA</div>
-                            <div class="periodo">2005 - 2012</div>
-                        </div>
-                        <div class="descricao-experiencia">
-                            <div class="cargo">Analista de sistemas</div>
-                            <div class="descricao">
-                                <ul>
-                                    <li>Desenvolvimento de relatórios para clientes internos utilizando o ReporterBuilder 7 </li>
-                                    <li>Negociação de demandas com fornecedores dos sistemas utilizados pelo cliente interno </li>
-                                    <li>Testes para efetivação de migração e desenvolvimento de novas demandas </li>
-                                    <li>Sistemas desenvolvidos em Java, Delphi, VB e C#</li>
-                                </ul>
-                            </div>
-                            <br>
-                            <div class="cargo">Estágio</div>
-                            <div class="descricao">
-                                <ul>
-                                    <li>Suporte as Demandas do cliente interno</li>
-                                    <li>Criação de relatórios utilizando o utilizando o ReporterBuilder 7 </li>
-                                </ul>
-                            </div>
+    <!-- Experience Section -->
+    <section id="experience" class="section-padding" style="background: var(--color-white);">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="section-title shine">Experiência Profissional</h2>
+                <p class="section-subtitle">Mais de <span class="text-primary shine">19 anos</span> de carreira em desenvolvimento de software</p>
+            </div>
+            
+            <div class="timeline reveal reveal-delay-1">
+                <div class="timeline-item">
+                    <div class="timeline-date">2012 - Presente (14 anos)</div>
+                    <h3 class="timeline-title">Analista de Sistemas Sênior</h3>
+                    <div class="timeline-company">Tecgraf / PUC-RJ</div>
+                    <div class="timeline-description">
+                        <p class="mb-4">
+                            Desenvolvimento de sistemas críticos com evolução de stack tecnológica legacy para moderna, aplicando as melhores práticas de engenharia de software.
+                        </p>
+                        <ul style="list-style: disc; margin-left: 1.5rem; color: var(--color-gray-700);">
+                            <li>Arquitetura e desenvolvimento full-stack (Python, C#, React, Angular)</li>
+                            <li>Implementação de CI/CD com Docker e GitHub Actions</li>
+                            <li>Integração de soluções com IA/ML e LLMs</li>
+                            <li>Modernização de sistemas desktop (Windows Forms, WPF) para web</li>
+                            <li>Mentoria de desenvolvedores júnior e plenos</li>
+                        </ul>
+                        <div class="skill-tags mt-4">
+                            <span class="tech-badge">Angular</span>
+                            <span class="tech-badge">C#/.NET</span>
+                            <span class="tech-badge">Docker</span>
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">React</span>
+                            <span class="tech-badge">PostgreSQL</span>
+                            <span class="tech-badge">FastAPI</span>
                         </div>
                     </div>
                 </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">2005 - 2012 (7 anos)</div>
+                    <h3 class="timeline-title">Analista de Sistemas</h3>
+                    <div class="timeline-company">Merck KGaA</div>
+                    <div class="timeline-description">
+                        <p class="mb-4">
+                            Desenvolvimento de sistemas corporativos, relatórios customizados e integração com fornecedores de software.
+                        </p>
+                        <ul style="list-style: disc; margin-left: 1.5rem; color: var(--color-gray-700);">
+                            <li>Desenvolvimento de relatórios com ReportBuilder 7</li>
+                            <li>Negociação de demandas com fornecedores de sistemas</li>
+                            <li>Gestão de migração e testes de novas features</li>
+                            <li>Suporte a demandas de clientes internos</li>
+                        </ul>
+                        <div class="skill-tags mt-4">
+                            <span class="tech-badge">Java</span>
+                            <span class="tech-badge">Delphi</span>
+                            <span class="tech-badge">C#</span>
+                            <span class="tech-badge">Visual Basic</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                <div class="item">
-                    <h2>Formação</h2>
-                    <div class="instituicao item">
-                        <div class="ensino">
-                            <div class="nome-instituicao">Instituto Infnet</div>
-                            <div class="formacao">Pós Graduação em Engenharia de Software com .Net</div>
-                            <div class="periodo">2009-2011*</div>
+    <!-- Education Section -->
+    <section id="education" class="section-padding">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="section-title shine">Formação Acadêmica</h2>
+                <p class="section-subtitle">Educação continuada em tecnologia e inovação</p>
+            </div>
+            
+            <div class="education-grid">
+                <!-- MBA em IA - NOVO! -->
+                <div class="card reveal reveal-delay-1" style="border: 2px solid var(--color-primary);">
+                    <div class="badge badge-primary mb-3">Em Andamento</div>
+                    <h3 class="card-title">MBA em IA Generativa e LLMs</h3>
+                    <p class="text-lg font-semibold text-primary mb-2">PUC-Rio</p>
+                    <p class="text-sm text-gray-600 mb-4">2025 - 2026 (Conclusão: Junho/2026)</p>
+                    <p class="card-description">
+                        Especialização avançada em Inteligência Artificial Generativa, Large Language Models, Prompt Engineering, RAG (Retrieval-Augmented Generation) e aplicações práticas de IA em sistemas de produção.
+                    </p>
+                </div>
+                
+                <!-- Pós-Graduação -->
+                <div class="card reveal reveal-delay-2">
+                    <h3 class="card-title">Pós-Graduação em Engenharia de Software com .NET</h3>
+                    <p class="text-lg font-semibold text-primary mb-2">Instituto Infnet</p>
+                    <p class="text-sm text-gray-600 mb-4">2009 - 2011</p>
+                    <p class="card-description">
+                        Formação focada em Padrões de Desenvolvimento (SOLID, GRASP), TDD, Metodologias Ágeis (SCRUM, XP), ASP.NET, Arquitetura de Software e melhores práticas com C#.
+                    </p>
+                </div>
+                
+                <!-- Bacharelado -->
+                <div class="card reveal reveal-delay-3">
+                    <h3 class="card-title">Bacharelado em Sistemas de Informação</h3>
+                    <p class="text-lg font-semibold text-primary mb-2">FEUC - Fundação Educacional Unificada Campograndense</p>
+                    <p class="text-sm text-gray-600 mb-4">2003 - 2006</p>
+                    <p class="card-description">
+                        Fundamentos em análise de sistemas, programação (C++, Visual Basic), UML, banco de dados, sistemas operacionais e editoração eletrônica.
+                    </p>
+                </div>
+                
+                <!-- Técnico -->
+                <div class="card reveal reveal-delay-4">
+                    <h3 class="card-title">Técnico em Processamento de Dados</h3>
+                    <p class="text-lg font-semibold text-primary mb-2">FAETEC - Fundação de Apoio à Escola Técnica</p>
+                    <p class="text-sm text-gray-600 mb-4">1999 - 2001</p>
+                    <p class="card-description">
+                        Início da jornada em desenvolvimento de sistemas com Pascal, Delphi e C. Base sólida em lógica de programação e estruturas de dados.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding">
+        <div class="container">
+            <div class="contact-content reveal">
+                <h2 class="section-title shine">Vamos trabalhar juntos?</h2>
+                <p class="section-subtitle">
+                    Sempre disponível para novos projetos e oportunidades. Entre em contato!
+                </p>
+                
+                <div class="contact-grid">
+                    <a href="mailto:dev.lucianobtorres@gmail.com" class="contact-item">
+                        <i class="fas fa-envelope contact-icon"></i>
+                        <div>
+                            <div class="text-sm">dev.lucianobtorres@gmail.com</div>
                         </div>
-                        <div class="descricao-formacao">
-                            <p>Conhecimento de Padrões de Desenvolvimento, TDD, ASP, Reflection, RUP, XP, SCRUM, GRASP, SOLID, C#</p>
+                    </a>
+                    
+                    <a href="tel:+5521993060750" class="contact-item">
+                        <i class="fas fa-phone contact-icon"></i>
+                        <div>
+                            <div class="text-sm">+55 21 99306-0750</div>
                         </div>
-                    </div>
-                    <div class="instituicao item">
-                        <div class="ensino">
-                            <div class="nome-instituicao">FEUC - Fundação Educacional Unificada Campograndense
-                            </div>
-                            <div class="formacao">Bacharelado em Sistemas de Informação
-                            </div>
-                            <div class="periodo">2003-2006</div>
+                    </a>
+                    
+                    <a href="https://www.linkedin.com/in/lucianobtorres/" target="_blank" class="contact-item">
+                        <i class="fab fa-linkedin contact-icon"></i>
+                        <div>
+                            <div class="text-sm">/in/lucianobtorres</div>
                         </div>
-                        <div class="descricao-formacao">
-                            <p>C++, Visual Basic, Analise de sistemas, Editoração eletrônica, UML, Sistemas Operacionais</p>
+                    </a>
+                    
+                    <a href="https://github.com/lucianobtorres" target="_blank" class="contact-item">
+                        <i class="fab fa-github contact-icon"></i>
+                        <div>
+                            <div class="text-sm">@lucianobtorres</div>
                         </div>
-                    </div>
-                    <div class="instituicao item">
-                        <div class="ensino">
-                            <div class="nome-instituicao">FAETEC - Fundação de Apoio à Escola Técnica</div>
-                            <div class="formacao">Técnico em Processamento de Dados</div>
-                            <div class="periodo">1999-2001</div>
-                        </div>
-                        <div class="descricao-formacao">
-                            <p>Desenvolvimento de Sistemas em Pascal, Delphi, C</p>
-                        </div>
-                    </div>
-                </div>  
-            </div>        
-        </main>
-    </body>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Luciano Borges. Todos os direitos reservados.</p>
+            <p class="text-sm mt-2" style="color: var(--color-gray-500);">
+                Desenvolvido com <i class="fas fa-heart" style="color: var(--color-pink);"></i> usando HTML, CSS e JavaScript
+            </p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" aria-label="Voltar ao topo">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
 </html>

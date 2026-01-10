@@ -1,0 +1,81 @@
+/* ===================================
+   SKILLS CHART - ANIMATED BARS
+   ================================== */
+
+.skills-chart {
+    margin-top: var(--space-8);
+    padding: var(--space-6);
+    background: #ffffff;
+    border-radius: var(--border-radius-lg);
+    border: 1px solid #dadce0;
+}
+
+.skills-chart h3 {
+    color: #1a73e8 !important;
+    margin-bottom: var(--space-6);
+    text-align: center;
+}
+
+.skill-bar-item {
+    margin-bottom: var(--space-4);
+}
+
+.skill-bar-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--space-2);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: #202124;
+}
+
+.skill-bar-bg {
+    height: 12px;
+    background: #e8eaed;
+    border-radius: var(--border-radius-full);
+    overflow: hidden;
+    position: relative;
+}
+
+.skill-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #1a73e8, #4285f4);
+    border-radius: var(--border-radius-full);
+    transition: width 1.5s ease-out;
+    width: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-bar-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.skill-bar-fill[data-level="expert"] {
+    background: linear-gradient(90deg, #0f9d58, #34a853);
+}
+
+.skill-bar-fill[data-level="advanced"] {
+    background: linear-gradient(90deg, #1a73e8, #4285f4);
+}
+
+.skill-bar-fill[data-level="intermediate"] {
+    background: linear-gradient(90deg, #f4b400, #fbbc04);
+}
+
+/* Animate on scroll/load */
+.skill-bar-item.animate .skill-bar-fill {
+    width: var(--skill-width);
+}

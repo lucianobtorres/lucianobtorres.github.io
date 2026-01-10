@@ -1,0 +1,404 @@
+/* ===================================
+   ANIMATIONS & KEYFRAMES
+   CYBERPUNK/GAMER EFFECTS
+   ================================== */
+
+/* === CYBERPUNK KEYFRAMES === */
+
+/* Glitch effect for hero name */
+@keyframes glitch {
+  0%, 100% {
+    transform: translate(0);
+    text-shadow: 
+      0 0 10px rgba(0, 255, 136, 0.8),
+      0 0 20px rgba(0, 255, 136, 0.5),
+      0 0 30px rgba(0, 255, 136, 0.3);
+  }
+  25% {
+    transform: translate(-2px, 2px);
+    text-shadow: 
+      -2px 0 0 rgba(255, 0, 255, 0.7),
+      2px 0 0 rgba(0, 255, 255, 0.7),
+      0 0 20px rgba(0, 255, 136, 0.5);
+  }
+  50% {
+    transform: translate(2px, -2px);
+    text-shadow: 
+      2px 0 0 rgba(255, 0, 255, 0.7),
+      -2px 0 0 rgba(0, 255, 255, 0.7),
+      0 0 20px rgba(0, 255, 136, 0.5);
+  }
+  75% {
+    transform: translate(-2px, -2px);
+    text-shadow: 
+      -2px 0 0 rgba(255, 0, 255, 0.7),
+      2px 0 0 rgba(0, 255, 255, 0.7),
+      0 0 20px rgba(0, 255, 136, 0.5);
+  }
+}
+
+/* Neon pulse glow */
+@keyframes neonPulse {
+  0%, 100% {
+    box-shadow: 
+      0 0 5px rgba(0, 255, 136, 0.5),
+      0 0 10px rgba(0, 255, 136, 0.4),
+      0 0 15px rgba(0, 255, 136, 0.3),
+      0 0 20px rgba(0, 255, 136, 0.2);
+  }
+  50% {
+    box-shadow: 
+      0 0 10px rgba(0, 255, 136, 0.8),
+      0 0 20px rgba(0, 255, 136, 0.6),
+      0 0 30px rgba(0, 255, 136, 0.4),
+      0 0 40px rgba(0, 255, 136, 0.2);
+  }
+}
+
+/* Text neon glow */
+@keyframes textNeonGlow {
+  0%, 100% {
+    text-shadow: 
+      0 0 10px rgba(0, 255, 136, 0.8),
+      0 0 20px rgba(0, 255, 136, 0.5),
+      0 0 30px rgba(0, 255, 136, 0.3),
+      0 0 40px rgba(0, 255, 136, 0.1);
+  }
+  50% {
+    text-shadow: 
+      0 0 20px rgba(0, 255, 136, 1),
+      0 0 30px rgba(0, 255, 136, 0.8),
+      0 0 40px rgba(0, 255, 136, 0.6),
+      0 0 50px rgba(0, 255, 136, 0.4),
+      0 0 60px rgba(0, 255, 136, 0.2);
+  }
+}
+
+/* Floating particles */
+@keyframes floatParticle {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(50px);
+    opacity: 0;
+  }
+}
+
+/* === STANDARD KEYFRAMES === */
+
+/* Fade in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Fade in up */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade in down */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scale in */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Slide in from left */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Slide in from right */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Gradient shift for hero */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Pulse glow */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(102, 126, 234, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(102, 126, 234, 0.6);
+  }
+}
+
+/* Bounce */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Spin */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* === ANIMATION CLASSES === */
+
+/* Scroll reveal animations - Smoother */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out);
+  will-change: opacity, transform;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* Fade animations */
+.fade-in {
+  animation: fadeIn var(--animation-duration-normal) var(--ease-out);
+}
+
+.fade-in-up {
+  animation: fadeInUp var(--animation-duration-slow) var(--ease-out);
+}
+
+.fade-in-down {
+  animation: fadeInDown var(--animation-duration-slow) var(--ease-out);
+}
+
+/* Scale animation */
+.scale-in {
+  animation: scaleIn var(--animation-duration-slow) var(--ease-bounce);
+}
+
+/* Slide animations */
+.slide-in-left {
+  animation: slideInLeft var(--animation-duration-slow) var(--ease-out);
+}
+
+.slide-in-right {
+  animation: slideInRight var(--animation-duration-slow) var(--ease-out);
+}
+
+/* Stagger children animations */
+.stagger-children > * {
+  opacity: 0;
+  animation: fadeInUp var(--animation-duration-slow) var(--ease-out) forwards;
+}
+
+.stagger-children > *:nth-child(1) { animation-delay: 0.1s; }
+.stagger-children > *:nth-child(2) { animation-delay: 0.2s; }
+.stagger-children > *:nth-child(3) { animation-delay: 0.3s; }
+.stagger-children > *:nth-child(4) { animation-delay: 0.4s; }
+.stagger-children > *:nth-child(5) { animation-delay: 0.5s; }
+.stagger-children > *:nth-child(6) { animation-delay: 0.6s; }
+.stagger-children > *:nth-child(7) { animation-delay: 0.7s; }
+.stagger-children > *:nth-child(8) { animation-delay: 0.8s; }
+.stagger-children > *:nth-child(9) { animation-delay: 0.9s; }
+.stagger-children > *:nth-child(10) { animation-delay: 1.0s; }
+
+/* === HERO ANIMATIONS === */
+.hero-gradient {
+  background: var(--gradient-hero);
+  background-size: 200% 200%;
+  animation: gradientShift 10s ease infinite;
+}
+
+/* === HOVER EFFECTS === */
+.hover-lift {
+  transition: transform var(--transition-base);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+}
+
+.hover-scale {
+  transition: transform var(--transition-base);
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+.hover-glow {
+  transition: all var(--transition-base);
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 30px rgba(102, 126, 234, 0.5);
+}
+
+/* === LOADING ANIMATIONS === */
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+.pulse {
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+.float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.bounce {
+  animation: bounce 2s ease-in-out infinite;
+}
+
+/* === TRANSITION UTILITIES === */
+.transition-fast {
+  transition: all var(--transition-fast);
+}
+
+.transition-base {
+  transition: all var(--transition-base);
+}
+
+.transition-slow {
+  transition: all var(--transition-slow);
+}
+
+/* === SCROLL INDICATOR === */
+.scroll-indicator {
+  position: absolute;
+  bottom: var(--space-8);
+  left: 50%;
+  transform: translateX(-50%);
+  animation: bounce 2s ease-in-out infinite;
+  color: var(--color-white);
+  font-size: var(--text-2xl);
+  opacity: 0.8;
+  cursor: pointer;
+  transition: opacity var(--transition-base);
+}
+
+.scroll-indicator:hover {
+  opacity: 1;
+}
+
+/* === ENTRANCE ANIMATIONS === */
+@media (prefers-reduced-motion: no-preference) {
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  
+  .animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+/* === CYBERPUNK EFFECTS === */
+.glitch-text {
+  animation: glitch 3s ease-in-out infinite;
+}
+
+.neon-glow-text {
+  animation: textNeonGlow 2s ease-in-out infinite;
+}
+
+.neon-border {
+  animation: neonPulse 2s ease-in-out infinite;
+}
+
+.tech-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.tech-float:nth-child(2n) {
+  animation-delay: 0.5s;
+  animation-duration: 3.5s;
+}
+
+.tech-float:nth-child(3n) {
+  animation-delay: 1s;
+  animation-duration: 4s;
+}
+
