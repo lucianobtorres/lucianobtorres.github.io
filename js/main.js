@@ -274,6 +274,9 @@
         // Back to Top functionality
         initBackToTop();
         
+        // Dynamic Experience Counter
+        initExperienceCounter();
+        
         // Performance tracking (development only)
         if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
             logPerformance();
@@ -282,6 +285,20 @@
         console.log('✅ Portfolio initialized successfully!');
     }
     
+    // ===================================
+    // DYNAMIC EXPERIENCE COUNTER
+    // ===================================
+    function initExperienceCounter() {
+        const experienceSpan = document.getElementById('experience-years');
+        if (!experienceSpan) return;
+        
+        const startYear = 2005; // Based on 2025 - 19 = 2006
+        const currentYear = new Date().getFullYear();
+        const years = currentYear - startYear;
+        
+        experienceSpan.textContent = `${years} anos`;
+    }
+
     // ===================================
     // BACK TO TOP BUTTON
     // ===================================

@@ -195,7 +195,6 @@
 
 /* === ABOUT SECTION === */
 #about {
-    background: #f8f9fa;
     color: #202124;
     position: relative;
     overflow: visible !important; /* Required for sticky positioning */
@@ -707,9 +706,6 @@ p {
     color: var(--color-gray-300) !important;
 }
 
-strong {
-    color: var(--color-ice);
-}
 
 /* === SECTION DIVIDER === */
 .section-divider {
