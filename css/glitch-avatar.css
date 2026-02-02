@@ -1,0 +1,150 @@
+/* ===================================
+   AVATAR GLITCH EFFECT
+   Specific styles for the scroll-triggered avatar glitch
+   ================================== */
+
+/* Wrapper adjustment */
+.about-photo {
+    background-size: cover;
+    background-position: center;
+    /* Ensure pseudo-elements can position relative to this */
+    position: sticky; /* Kept from original, but important context */
+}
+
+/* Camada de Ruído Digital Estático */
+.about-photo .noise {
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    /* Using a base64 distinct pattern or similar if possible, 
+       but for now adapting the user's external link or just a low opacity noise color 
+       to avoid external dependencies if preferable. 
+       Let's stick to the user's provided GIF for now as requested or a CSS alternative.
+       Using a simple CSS radial gradient noise approximation to keep it local/performant 
+       or the provided URL if specific look is needed.
+       The user provided: https://media.giphy.com/media/oEI9uWUznW3pS/giphy.gif 
+    */
+    background-image: url('https://media.giphy.com/media/oEI9uWUznW3pS/giphy.gif');
+    opacity: 0;
+    pointer-events: none;
+    z-index: 5;
+    mix-blend-mode: overlay;
+    border-radius: 50%; /* Match container */
+}
+
+.about-photo.glitch-active .noise { 
+    opacity: 0.2; 
+}
+
+/* EFEITO VANELLOPE DRAMÁTICO */
+.about-photo.glitch-active::before,
+.about-photo.glitch-active::after {
+    content: "";
+    position: absolute;
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    height: 100%;
+    background: inherit; /* Inherits the background-image set via JS */
+    background-size: cover;
+    background-position: center;
+    z-index: 10;
+    border-radius: 50%; /* Match container */
+    opacity: 0.8;
+}
+
+/* Camada 1: Desvio Cromático Ciano e Fragmentação Superior */
+.about-photo.glitch-active::before {
+    left: 8px;
+    filter: hue-rotate(-90deg) brightness(1.8) contrast(2);
+    animation: vanellope-1 0.15s infinite;
+    clip-path: polygon(0 0, 100% 0, 100% 20%, 0 20%, 0 40%, 100% 40%, 100% 45%, 0 45%);
+}
+
+/* Camada 2: Desvio Cromático Magenta e Fragmentação Inferior */
+.about-photo.glitch-active::after {
+    left: -8px;
+    filter: hue-rotate(150deg) brightness(1.5);
+    animation: vanellope-2 0.1s infinite;
+    clip-path: polygon(0 60%, 100% 60%, 100% 70%, 0 70%, 0 85%, 100% 85%, 100% 100%, 0 100%);
+}
+
+/* A imagem principal também treme e muda de cor */
+.about-photo.glitch-active img {
+    animation: main-shake 0.1s infinite;
+    filter: invert(0.1) sepia(1) hue-rotate(180deg);
+}
+
+@keyframes vanellope-1 {
+    0% { transform: translate(5px, -2px) skewX(10deg); }
+    50% { transform: translate(-5px, 2px) skewX(-20deg); clip-path: inset(10% 0 80% 0); }
+    100% { transform: translate(2px, 5px) skewX(5deg); }
+}
+
+@keyframes vanellope-2 {
+    0% { transform: translate(-5px, 5px) scaleY(1.1); }
+    50% { transform: translate(5px, -5px) scaleY(0.9); clip-path: inset(70% 0 10% 0); }
+    100% { transform: translate(-2px, -2px) scaleY(1.05); }
+}
+
+@keyframes main-shake {
+    0% { transform: translate(1px, 1px); }
+    25% { transform: translate(-1px, -1px) scale(1.02); }
+    50% { transform: translate(2px, -2px); filter: contrast(2) brightness(1.5); }
+    75% { transform: translate(-2px, 2px); }
+    100% { transform: translate(0, 0); }
+}
+
+.about-photo .scanline {
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0) 100%);
+    background-size: 100% 8px;
+    animation: scanline-mov 4s linear infinite;
+    z-index: 11;
+    pointer-events: none;
+    border-radius: 50%; /* Match container */
+    opacity: 0.6;
+}
+
+@keyframes scanline-mov { 
+    0% { top: -100%; } 
+    100% { top: 100%; } 
+}
+
+/* ===================================
+   SPARK / LIGHTNING EFFECT
+   ================================== */
+/* Estilo base do raio */
+.spark {
+    position: absolute;
+    pointer-events: none;
+    z-index: 10000;
+    height: 3px;
+    border-radius: 4px;
+    opacity: 0.9;
+    filter: blur(0.4px);
+}
+
+/* Cores e Brilhos */
+.spark-cyan { 
+    background: #00f2ff; 
+    box-shadow: 0 0 15px #00f2ff, 0 0 30px #00f2ff;
+}
+
+.spark-magenta { 
+    background: #ff00c1; 
+    box-shadow: 0 0 15px #ff00c1, 0 0 30px #ff00c1;
+}
+
+/* Animação de movimento e sumiço */
+@keyframes spark-extreme {
+    0% { transform: scaleX(0) translateX(0); opacity: 1; }
+    30% { transform: scaleX(1.8) translateX(var(--mX)); opacity: 1; }
+    100% { transform: scaleX(0) translateX(var(--fX)); opacity: 0; }
+}

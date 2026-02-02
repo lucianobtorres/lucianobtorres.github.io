@@ -273,6 +273,9 @@
         
         // Back to Top functionality
         initBackToTop();
+
+        // Avatar Glitch Effect
+        initAvatarGlitch();
         
         // Dynamic Experience Counter
         initExperienceCounter();
@@ -349,7 +352,114 @@
             observer.observe(bar);
         });
     }
-    
+    // ===================================
+    // AVATAR GLITCH EFFECT
+    // ===================================
+    function initAvatarGlitch() {
+        const aboutSection = document.getElementById('about');
+        const photoWrapper = document.querySelector('.about-photo');
+        const photoImg = photoWrapper ? photoWrapper.querySelector('img') : null;
+        
+        if (!aboutSection || !photoWrapper || !photoImg) return;
+
+        const images = [
+            "img/eu.JPG",
+            "img/cyberpunk_toon_noglasses.png",
+            "img/cyberpunk_toon_v2.png",
+            "img/cyberpunk_avatar.png"
+        ];
+        
+        images.forEach(src => {
+            const img = new Image();
+            img.src = src;
+        });
+
+        let lastIndex = -1;
+        let timeout;
+
+        // --- FUNÇÃO DE ATUALIZAÇÃO CENTRALIZADA ---
+        const updateImageEffect = (index) => {
+            if (index === lastIndex) return;
+
+            // Sincroniza backgrounds e ativa animação
+            photoWrapper.style.backgroundImage = `url('${images[index]}')`;
+            photoWrapper.classList.add('glitch-active');
+            
+            photoImg.src = images[index];
+            lastIndex = index;
+
+            // Duração do Glitch (300ms)
+            clearTimeout(timeout);
+            timeout = setTimeout(() => {
+                photoWrapper.classList.remove('glitch-active');
+            }, 300);
+
+            // Adiciona Faíscas/Raios
+            // No clique ou scroll importante, podemos aumentar para 15-20 raios para ser mais dramático
+            for(let i=0; i < 15; i++) {
+                setTimeout(() => {
+                    createExtremeSpark(photoWrapper);
+                }, Math.random() * 200);
+            }
+        };
+
+        // --- EVENTO: CLIQUE ---
+        photoWrapper.style.cursor = 'pointer'; // Feedback visual de que é clicável
+        photoWrapper.addEventListener('click', () => {
+            // Avança para a próxima imagem (em loop)
+            const nextIndex = (lastIndex + 1) % images.length;
+            updateImageEffect(nextIndex);
+        });
+
+        // --- EVENTO: SCROLL ---
+        window.addEventListener('scroll', () => {
+            const rect = aboutSection.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+            
+            const totalScrollableDistance = rect.height + windowHeight;
+            const scrolledDistance = windowHeight - rect.top;
+            
+            let scrollPercent = scrolledDistance / totalScrollableDistance;
+            scrollPercent = Math.max(0, Math.min(1, scrollPercent));
+            
+            const index = Math.min(Math.floor(scrollPercent * images.length), images.length - 1);
+
+            updateImageEffect(index);
+        });
+    }
+
+    function createExtremeSpark(targetContainer) {
+        const spark = document.createElement('div');
+        const isCyan = Math.random() > 0.5;
+        
+        // Define a cor aleatória
+        spark.className = `spark ${isCyan ? 'spark-cyan' : 'spark-magenta'}`;
+        
+        // Posicionamento aleatório baseado nas dimensões do container
+        const xBase = Math.random() * targetContainer.offsetWidth - 50; 
+        const yBase = Math.random() * targetContainer.offsetHeight;
+        
+        spark.style.left = xBase + 'px';
+        spark.style.top = yBase + 'px';
+        
+        // Largura aleatória do raio
+        const width = Math.random() * 180 + 40;
+        spark.style.width = width + 'px';
+      
+        // Define a trajetória do "salto" usando variáveis CSS
+        const moveX = (Math.random() - 0.5) * 250;
+        const finalX = moveX * 1.2;
+        spark.style.setProperty('--mX', `${moveX}px`);
+        spark.style.setProperty('--fX', `${finalX}px`);
+      
+        // Aplica a animação
+        spark.style.animation = `spark-extreme 0.25s cubic-bezier(0.1, 0.8, 0.2, 1) forwards`;
+      
+        // Adiciona ao container e remove após a animação terminar
+        targetContainer.appendChild(spark);
+        setTimeout(() => spark.remove(), 250);
+    }
+
     // ===================================
     // ENHANCED BOKEH PARALLAX
     // ===================================
