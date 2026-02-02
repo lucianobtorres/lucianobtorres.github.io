@@ -291,7 +291,6 @@
     filter: grayscale(0%);
     transition: filter var(--transition-base);
     /* Fix photo orientation */
-    transform: rotate(90deg);
 }
 
 .about-photo:hover img {
